@@ -1,0 +1,13 @@
+# Build
+- docker build -t udagram-reverseproxy ./udagram-reverseproxy
+# Do similar for other three images
+
+# Tagging
+- docker tag udagram-reverseproxy tuankhoi2206/udagram-reverseproxy:v1
+# Do similar for other three images
+
+# Push
+# Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker push tuankhoi2206/reverseproxy:v1
+# Do similar for other three images
